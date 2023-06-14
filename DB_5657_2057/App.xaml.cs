@@ -13,5 +13,9 @@ namespace DB_5657_2057
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            SQL.Logout();
+        }
     }
 }

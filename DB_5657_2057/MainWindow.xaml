@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnBuy"
+                    Margin="10"
+                    Content="Buy Ticket"
+                    FontSize="18"/>
+        </Grid>
+
+        <ListBox x:Name="lbStations"
+                 Grid.Row="1"
+                 Margin="20"
+                 HorizontalContentAlignment="Center"
+                 MouseDoubleClick="lbStations_MouseDoubleClick">
+        </ListBox>
     </Grid>
 </Window>

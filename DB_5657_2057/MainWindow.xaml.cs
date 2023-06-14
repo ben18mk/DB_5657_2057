@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +21,26 @@ namespace DB_5657_2057
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<object[]> stations;
+
         public MainWindow()
         {
+            SQL.Login("localhost", "lev_project", "root", "");
+            stations = (List<object[]>)SQL.Query("SELECT * FROM stations");
+
             InitializeComponent();
+
+            lbStations.ItemsSource = stations.Select(x => x[1]).OrderBy(x => x);
+        }
+
+        private void lbStations_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            string selectedStationName = lbStations.SelectedItem.ToString();
+            object[] station = (from s in stations
+                               where s[1].ToString() == selectedStationName
+                               select s).ToArray();
+
+            new StationInfo(station).ShowDialog();
         }
     }
 }
