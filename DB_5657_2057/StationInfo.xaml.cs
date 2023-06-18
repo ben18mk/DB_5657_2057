@@ -1,5 +1,6 @@
 ﻿// TODO: IMPLEMENT
 
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -79,22 +80,34 @@ namespace DB_5657_2057
                 e.Handled = true;
         }
 
-        private void lbRoutes_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            // TODO: Implement Route info
-        }
-
         private void btnGetLineOpTime_Click(object sender, RoutedEventArgs e)
         {
-            /*
-             2 Cases:
-                1. Line passes in the station
-                2. Line does not pass in the station
-             */
+            List<object> result = SQL.Procedure("GetLineOpTimeAtStation",
+                          new List<List<object>>()
+                          {
+                              new List<object>()
+                              {
+                                  "line_id",
+                                  MySqlDbType.Int32,
+                                  int.Parse(tbxLineId.Text)
+                              },
+                              new List<object>()
+                              {
+                                  "station_id",
+                                  MySqlDbType.Int32,
+                                  (int) station[0]
+                              }
+                          },
+                          new List<List<object>>()
+                          {
+                              new List<object>()
+                              {
+                                  "result",
+                                  MySqlDbType.Time
+                              }
+                          }).ToList();
 
-            string query = loadQuery("../../Procedure Calls/GetLineOpTimeAtStation.sql");
-            string result = SQL.Query(query).First().ToString();
-            tbxOperationTime.Text = result;
+            tbxOperationTime.Text = result[0].ToString() != "" ? result[0].ToString() : "No Data";
         }
     }
 }

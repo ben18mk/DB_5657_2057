@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,9 +56,9 @@ namespace DB_5657_2057
                 MySqlCommand cmd = new MySqlCommand(query, _connection);
                 rdr = cmd.ExecuteReader();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw ex;
+                throw e;
             }
 
             List<object[]> result = new List<object[]>();
@@ -70,6 +71,60 @@ namespace DB_5657_2057
             }
 
             rdr.Close();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Calls a procedure
+        /// </summary>
+        /// <param name="procedureName">Procedure name</param>
+        /// <param name="inParams">IN parameters. Item Format: [0] Name; [1] Type; [2] Value</param>
+        /// <param name="outParams">OUT parameters. Can be NULL if there are not OUT parameters.
+        ///                         Item Format: [0] Name; [1] Type</param>
+        /// <returns>If OUT paramters is not NULL, the result. Otherwise NULL</returns>
+        public static IEnumerable<object> Procedure(string procedureName,
+                                                    IEnumerable<List<object>> inParams,
+                                                    IEnumerable<List<object>> outParams)
+        {
+            List<object> result = outParams == null ? null : new List<object>();
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(procedureName, _connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                List<MySqlParameter> inParameters = new List<MySqlParameter>();
+                foreach (var inParam in inParams)
+                {
+                    if (inParam.Count != 3)
+                        throw new Exception("Bad parameters");
+
+                    cmd.Parameters.Add(new MySqlParameter($"@{inParam[0]}", (MySqlDbType) inParam[1]));
+                    cmd.Parameters[$"@{inParam[0]}"].Direction = ParameterDirection.Input;
+                    cmd.Parameters[$"@{inParam[0]}"].Value = inParam[2];
+                }
+
+                cmd.Parameters.AddRange(inParameters.ToArray());
+
+                foreach (var outParam in outParams)
+                {
+                    if (outParam.Count != 2)
+                        throw new Exception("Bad parameters");
+
+                    cmd.Parameters.Add(new MySqlParameter($"@{outParam[0]}", (MySqlDbType) outParam[1]));
+                    cmd.Parameters[$"@{outParam[0]}"].Direction = ParameterDirection.Output;
+                }
+
+                cmd.ExecuteNonQuery();
+
+                foreach (var outParam in outParams)
+                    result.Add(cmd.Parameters[$"@{outParam[0]}"].Value);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
 
             return result;
         }

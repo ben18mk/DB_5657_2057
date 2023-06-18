@@ -101,8 +101,7 @@
                 <ListBox x:Name="lbRoutes"
                          Background="#ff5e57"
                          Grid.Row="1"
-                         HorizontalContentAlignment="Center"
-                         MouseDown="lbRoutes_MouseDown"/>
+                         HorizontalContentAlignment="Center"/>
             </Grid>
         </Grid>
 
@@ -114,7 +113,6 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
-                <!--TODO: IMPLEMENT-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.15*"/>
                     <RowDefinition/>
@@ -163,10 +161,9 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </Grid>
-            
+
             <Grid Grid.Row="1"
                   Background="#778ca3">
-                <!--TODO: IMPLEMENT-->
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
