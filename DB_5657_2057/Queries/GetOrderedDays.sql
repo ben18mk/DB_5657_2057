@@ -1,5 +1,5 @@
 /*
-	{0} - line_id
+	0 param - line_id
 */
 
 SELECT DISTINCT payment_date

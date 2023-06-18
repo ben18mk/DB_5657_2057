@@ -1,5 +1,5 @@
 /* 
-	{0} - date
+	0 param - date
 	Date format: 'yyyy-mm-dd'
 */
 

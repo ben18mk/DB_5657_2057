@@ -192,7 +192,7 @@
                     <Button x:Name="btnGetLineOpTime"
                             Grid.Column="1"
                             Margin="30, 25"
-                            Content="Get Operation Time"/>
+                            Content="Get Operation Time" Click="btnGetLineOpTime_Click"/>
                 </Grid>
 
                 <TextBox x:Name="tbxOperationTime"

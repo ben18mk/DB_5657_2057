@@ -73,12 +73,28 @@ namespace DB_5657_2057
 
         private void tbxLineId_KeyDown(object sender, KeyEventArgs e)
         {
-            //if (e.Key !=)
+            if (!(e.Key >= Key.D0 && e.Key <= Key.D9) &&
+                !(e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) ||
+                e.Key == Key.Space)
+                e.Handled = true;
         }
 
         private void lbRoutes_MouseDown(object sender, MouseButtonEventArgs e)
         {
             // TODO: Implement Route info
+        }
+
+        private void btnGetLineOpTime_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+             2 Cases:
+                1. Line passes in the station
+                2. Line does not pass in the station
+             */
+
+            string query = loadQuery("../../Procedure Calls/GetLineOpTimeAtStation.sql");
+            string result = SQL.Query(query).First().ToString();
+            tbxOperationTime.Text = result;
         }
     }
 }

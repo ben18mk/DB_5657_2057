@@ -1,5 +1,5 @@
 ﻿/*
-	{0} - passenger_id
+	0 param - passenger_id
 */
 
 CALL CountPassengerPaymentMethod({0}, @cash_count, @card_count, @total_payments);

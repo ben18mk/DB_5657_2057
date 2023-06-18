@@ -1,5 +1,5 @@
 /*
-    {0} - passenger_id
+    0 param - passenger_id
 */
 
 SELECT

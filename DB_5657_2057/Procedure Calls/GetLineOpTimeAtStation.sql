@@ -1,6 +1,6 @@
 ﻿/*
-	{0} - line_id
-	{1} - station_id
+	0 param - line_id
+	1 param - station_id
 */
 
 CALL GetLineOpTimeAtStation({0}, {1}, @result);

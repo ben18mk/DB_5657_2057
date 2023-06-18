@@ -1,5 +1,5 @@
 ﻿/*
-	{0} - line_id
+	0 param - line_id
 */
 
 CALL GetLineInfo({0}, @bike_accessible, @dist, @travel_time, @type_name);

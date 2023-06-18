@@ -1,5 +1,5 @@
 /*
-    {0} - station_id
+    0 param - station_id
 */
 
 SELECT ss.name AS origin, es.name AS destination

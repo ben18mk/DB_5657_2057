@@ -109,6 +109,14 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Procedure Calls\CountPassengerPaymentMethod.sql" />
+    <Content Include="Procedure Calls\GetLineInfo.sql" />
+    <Content Include="Procedure Calls\GetLineOpTimeAtStation.sql" />
+    <Content Include="Queries\CountTicketsPerLineDay.sql" />
+    <Content Include="Queries\CountTicketsPerLineTotal.sql" />
+    <Content Include="Queries\GetOrderedDays.sql" />
+    <Content Include="Queries\PassengerRideHistory.sql" />
+    <Content Include="Queries\RouteInformation.sql" />
     <Content Include="Queries\StationRoutes.sql" />
     <Content Include="Queries\StationUpcommingTrains.sql" />
   </ItemGroup>
