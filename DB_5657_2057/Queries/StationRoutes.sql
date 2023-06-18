@@ -1,3 +1,7 @@
+/*
+    {0} - station_id
+*/
+
 SELECT ss.name AS origin, es.name AS destination
 FROM stations ss, stations es
 WHERE (ss.station_id, es.station_id) IN (SELECT start_station_id, end_station_id

@@ -59,6 +59,7 @@
     <Compile Include="StationInfo.xaml.cs">
       <DependentUpon>StationInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpcommingTrain.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -109,7 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Queries\StationRoutes.sql" />
-    <Content Include="Queries\StationsFromWhereToWhere.sql" />
     <Content Include="Queries\StationUpcommingTrains.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

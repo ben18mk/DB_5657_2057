@@ -85,7 +85,8 @@
                 </Grid>
             </Grid>
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1"
+                  Background="#ff3f34">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.15*"/>
                     <RowDefinition/>
@@ -98,12 +99,15 @@
                            FontWeight="Bold"/>
 
                 <ListBox x:Name="lbRoutes"
+                         Background="#ff5e57"
                          Grid.Row="1"
-                         HorizontalContentAlignment="Center"/>
+                         HorizontalContentAlignment="Center"
+                         MouseDown="lbRoutes_MouseDown"/>
             </Grid>
         </Grid>
 
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1"
+              Background="#4a69bd">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -124,25 +128,85 @@
 
                 <ListBox x:Name="lbUpcommingTrains"
                          Grid.Row="1"
-                         HorizontalContentAlignment="Center"/>
+                         Background="#6a89cc"
+                         HorizontalContentAlignment="Center">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="30">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="80"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="{Binding LineID}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                                <TextBlock Text="{Binding Destination}"
+                                           Grid.Column="1"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                                <TextBlock Text="{Binding OperationTime}"
+                                           Grid.Column="2"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                                <TextBlock Text="{Binding MinutesLeft}"     
+                                           Grid.Column="3"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </Grid>
             
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1"
+                  Background="#778ca3">
                 <!--TODO: IMPLEMENT-->
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <TextBlock HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           Text="Destinations"
-                           FontSize="16"
-                           FontWeight="Bold"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-                <ListBox x:Name="lbDestinations"
+                    <TextBox x:Name="tbxLineId"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Center"
+                             MaxLength="3"
+                             Width="100"
+                             Height="50"
+                             FontSize="24"
+                             KeyDown="tbxLineId_KeyDown"/>
+
+                    <Button x:Name="btnGetLineOpTime"
+                            Grid.Column="1"
+                            Margin="30, 25"
+                            Content="Get Operation Time"/>
+                </Grid>
+
+                <TextBox x:Name="tbxOperationTime"
                          Grid.Row="1"
-                         HorizontalContentAlignment="Center"/>
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"
+                         Height="50"
+                         Width="200"
+                         Margin="0, -10, 0, 0"
+                         IsEnabled="False"
+                         FontSize="36"
+                         FontWeight="Bold"/>
             </Grid>
         </Grid>
     </Grid>

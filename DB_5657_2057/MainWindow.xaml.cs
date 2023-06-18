@@ -25,8 +25,10 @@ namespace DB_5657_2057
 
         public MainWindow()
         {
+            #region Pre-Load
             SQL.Login("localhost", "lev_project", "root", "");
             stations = (List<object[]>)SQL.Query("SELECT * FROM stations");
+            #endregion
 
             InitializeComponent();
 
