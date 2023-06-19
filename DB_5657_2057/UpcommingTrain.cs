@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DB_5657_2057
 {
+    /// <summary>
+    /// This class represents the info for an upcomming train in a station
+    /// </summary>
     public class UpcommingTrain
     {
         public string LineID { get; }

@@ -10,6 +10,9 @@ using MySql.Data.MySqlClient;
 
 namespace DB_5657_2057
 {
+    /// <summary>
+    /// This class eases the communication with the SQL server
+    /// </summary>
     public static class SQL
     {
         private static MySqlConnection _connection;
