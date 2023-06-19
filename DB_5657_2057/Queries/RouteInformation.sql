@@ -1,4 +1,4 @@
-﻿SELECT *
+﻿ SELECT *
 FROM routes
 NATURAL JOIN (SELECT route_id, SUM(price) AS income
       FROM route_prices

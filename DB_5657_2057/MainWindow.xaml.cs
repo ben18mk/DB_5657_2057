@@ -44,5 +44,10 @@ namespace DB_5657_2057
 
             new StationInfo(station).ShowDialog();
         }
+
+        private void btnGetRoutes_Click(object sender, RoutedEventArgs e)
+        {
+            new Routes().ShowDialog();
+        }
     }
 }

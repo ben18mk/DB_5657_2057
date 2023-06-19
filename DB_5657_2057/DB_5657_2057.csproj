@@ -55,11 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Lines.xaml.cs">
+      <DependentUpon>Lines.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="StationInfo.xaml.cs">
       <DependentUpon>StationInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpcommingTrain.cs" />
+    <Compile Include="Routes.xaml.cs">
+      <DependentUpon>Routes.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Lines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,6 +83,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="StationInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Routes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

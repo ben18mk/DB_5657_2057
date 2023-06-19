@@ -14,13 +14,21 @@
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Button x:Name="btnBuy"
                     Margin="10"
                     Content="Buy Ticket"
+                    FontSize="18"/>
+
+            <Button x:Name="btnRoutes"
+                    Grid.Column="1"
+                    Margin="10"
+                    Content="Routes"
+                    Click="btnGetRoutes_Click"
                     FontSize="18"/>
         </Grid>
 
