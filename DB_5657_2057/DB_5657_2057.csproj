@@ -58,6 +58,7 @@
     <Compile Include="Lines.xaml.cs">
       <DependentUpon>Lines.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RouteRepresentation.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="StationInfo.xaml.cs">
       <DependentUpon>StationInfo.xaml</DependentUpon>
@@ -126,6 +127,7 @@
     <Content Include="Queries\CountTicketsPerLineDay.sql" />
     <Content Include="Queries\CountTicketsPerLineTotal.sql" />
     <Content Include="Queries\GetOrderedDays.sql" />
+    <Content Include="Queries\GetRouteLines.sql" />
     <Content Include="Queries\PassengerRideHistory.sql" />
     <Content Include="Queries\RouteInformation.sql" />
     <Content Include="Queries\StationRoutes.sql" />

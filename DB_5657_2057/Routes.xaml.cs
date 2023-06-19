@@ -19,15 +19,13 @@ namespace DB_5657_2057
     /// </summary>
     public partial class Routes : Window
     {
-        private List<string> routes;
+        private List<RouteRepresentation> routes;
         public Routes()
         {
             #region Pre-Load
-            routes = (from route in SQL.Query("SELECT r.route_id AS id, ss.name AS origin, es.name AS destination " +
-                                                 "FROM stations ss, stations es, routes r " +
-                                                 "WHERE ss.station_id = r.start_station_id AND es.station_id = r.end_station_id")
-                      let casted = (object[])route
-                      select $"{casted[0]}  {casted[1]} ---> {casted[2]}").ToList();
+            routes = (from route in SQL.Query(SQL.LoadQuery("../../Queries/RouteInformation.sql"))
+                      let casted = (object[]) route
+                      select new RouteRepresentation(casted)).ToList();
             #endregion
 
             InitializeComponent();
@@ -37,9 +35,7 @@ namespace DB_5657_2057
 
         private void lbRoutes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            string selectedRoute = lbRoutes.SelectedItem.ToString();
-
-            new Lines(int.Parse(selectedRoute.Substring(0, selectedRoute.IndexOf(" ")))).ShowDialog();
+            new Lines((RouteRepresentation)lbRoutes.SelectedItem).ShowDialog();
         }
 
     }

@@ -19,19 +19,20 @@ namespace DB_5657_2057
     /// </summary>
     public partial class Lines : Window
     {
-        private List<string> lines_id;
-        public Lines(int route_id)
+        private RouteRepresentation route;
+        private List<string> lineIds;
+        public Lines(RouteRepresentation route)
         {
             #region Pre-Load
-            lines_id = (from line in SQL.Query("SELECT line_id " +
-                                                          "FROM route_tlines rtl " +
-                                                          $"WHERE rtl.route_id = {route_id}")
-                                     let casted = (object[])line
-                                     select $"{casted[0]}").ToList();
+            this.route = route;
+
+            lineIds = (from line in SQL.Query(SQL.LoadQuery("../../Queries/GetRouteLines.sql", this.route.RouteID))
+                     let casted = (object[])line
+                     select casted[0].ToString()).ToList();
             #endregion
             InitializeComponent();
 
-            lbLines.ItemsSource = lines_id;
+            lbLines.ItemsSource = lineIds;
         }
 
         private void lbLine_MouseDoubleClick(object sender, MouseButtonEventArgs e)

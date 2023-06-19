@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,25 @@ namespace DB_5657_2057
         }
 
         /// <summary>
+        /// Loads SQL File
+        /// </summary>
+        /// <param name="strQueryFile">SQL file path</param>
+        /// <param name="info">local parameters</param>
+        /// <returns>SQL file content</returns>
+        public static string LoadQuery(string strQueryFile, params object[] info)
+        {
+            string query = "";
+            using (StreamReader sr = new StreamReader(strQueryFile))
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendFormat(sr.ReadToEnd().Replace("\r", "").Replace("\n", " "), info);
+                query = sb.ToString();
+            }
+
+            return query;
+        }
+
+        /// <summary>
         /// Sends a query to the database
         /// </summary>
         /// <param name="query">Query</param>
@@ -48,7 +68,7 @@ namespace DB_5657_2057
         /// <exception cref="Exception">If not connected to the database</exception>
         public static IEnumerable<IEnumerable<object>> Query(string query)
         {
-            if (_connection.State == System.Data.ConnectionState.Closed)
+            if (_connection.State == ConnectionState.Closed)
                 throw new Exception("Not connected");
 
 

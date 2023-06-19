@@ -5,12 +5,123 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DB_5657_2057"
         mc:Ignorable="d"
-        Title="Routes" Height="450" Width="800">
+        Title="Routes" Height="450" Width="1000"
+        ResizeMode="NoResize">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1"
+                   Text="ID"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="122,0,0,0"/>
+
+        <TextBlock Grid.Column="2"
+                   Text="From"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="252,0,0,0"/>
+
+        <TextBlock Grid.Column="3"
+                   Text="To"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="472,0,0,0"/>
+
+        <TextBlock Grid.Column="4"
+                   Text="Distance"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Margin="592,0,0,0"/>
+
+        <Grid Margin="707,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Travel"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       Margin="0,0,0,0"/>
+
+            <TextBlock Grid.Row="1"
+                       Text="Time"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       Margin="5,0,0,0"/>
+        </Grid>
+
+        <TextBlock Text="Income"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   Margin="802,0,0,0"/>
+
         <ListBox x:Name="lbRoutes"
-                 Margin="20"
+                 Grid.Row="1"
+                 Margin="20,0,20,20"
                  HorizontalContentAlignment="Center"
-                 MouseDoubleClick="lbRoutes_MouseDoubleClick">
+                 MouseDoubleClick="lbRoutes_MouseDoubleClick" Grid.ColumnSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding RouteID}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding Start}"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding End}"
+                                   Grid.Column="2"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding Distance}"
+                                   Grid.Column="3"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding TravelTime}"
+                                   Grid.Column="4"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding Income}"
+                                   Grid.Column="5"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
     </Grid>
 </Window>

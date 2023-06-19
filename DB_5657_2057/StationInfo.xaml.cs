@@ -1,6 +1,4 @@
-﻿// TODO: IMPLEMENT
-
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -34,15 +32,14 @@ namespace DB_5657_2057
             #region Pre-Load
             this.station = (object[])station[0];
 
-            routes = (from route in SQL.Query(loadQuery("../../Queries/StationRoutes.sql", this.station[0]))
+            routes = (from route in SQL.Query(SQL.LoadQuery("../../Queries/StationRoutes.sql", this.station[0]))
                       let casted = (object[]) route
                       select $"{casted[0]} ---> {casted[1]}").ToList();
 
-            upcommingTrains = (from upcommingTrain in SQL.Query(loadQuery("../../Queries/StationUpcommingTrains.sql", this.station[0]))
+            upcommingTrains = (from upcommingTrain in SQL.Query(SQL.LoadQuery("../../Queries/StationUpcommingTrains.sql", this.station[0]))
                                let casted = (object[])upcommingTrain
                                select new UpcommingTrain(casted)).ToList();
             #endregion
-
 
             InitializeComponent();
 
@@ -52,19 +49,6 @@ namespace DB_5657_2057
 
             lbRoutes.ItemsSource = routes;
             lbUpcommingTrains.ItemsSource = upcommingTrains;
-        }
-
-        private string loadQuery(string strQueryFile, params object[] info)
-        {
-            string query = "";
-            using (StreamReader sr = new StreamReader(strQueryFile))
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendFormat(sr.ReadToEnd().Replace("\r", "").Replace("\n", " "), info);
-                query = sb.ToString();
-            }
-
-            return query;
         }
 
         private void tblLocation_MouseDown(object sender, MouseButtonEventArgs e)
