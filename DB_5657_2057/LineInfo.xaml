@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DB_5657_2057"
         mc:Ignorable="d"
-        Title="LineInfo" Height="450" Width="800">
+        Title="LineInfo" Height="450" Width="800"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
@@ -18,90 +19,94 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Column="1"
-                       Text="LIne ID"
-                       HorizontalAlignment="Left"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Line ID"
+                       HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="24"
-                       FontWeight="Bold"
-                       Margin="60,0,0,0"/>
+                       FontWeight="Bold"/>
+
+            <TextBlock Grid.Row="1"
+                       x:Name="tblLineId"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="24"/>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Bike"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"/>
+
+                <TextBlock Grid.Row="1"
+                           Text="Accessible"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"/>
+            </Grid>
+
+            <TextBlock Grid.Column="1"
+                       Grid.Row="1"
+                       x:Name="tblBikeAccessible"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="24"/>
 
             <TextBlock Grid.Column="2"
-                       Text="Bike accessible"
-                       HorizontalAlignment="Left"
+                       Text="Distance"
+                       HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="24"
-                       FontWeight="Bold"
-                       Margin="180,0,0,0"/>
+                       FontWeight="Bold"/>
+
+            <TextBlock Grid.Column="2"
+                       Grid.Row="1"
+                       x:Name="tblDist"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="24"/>
 
             <TextBlock Grid.Column="3"
-                       Text="Dist"
-                       HorizontalAlignment="Left"
+                       Text="Travel Time"
+                       HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="24"
-                       FontWeight="Bold"
-                       Margin="395,0,0,0"/>
+                       FontWeight="Bold"/>
+
+            <TextBlock Grid.Column="3"
+                       Grid.Row="1"
+                       x:Name="tblTravelTime"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="24"/>
 
             <TextBlock Grid.Column="4"
-                       Text="Travel time"
-                       HorizontalAlignment="Left"
+                       Text="Type Name"
+                       HorizontalAlignment="Center"
                        VerticalAlignment="Center"
-                       FontSize="22"
-                       FontWeight="Bold"
-                       Margin="490,0,0,0"/>
+                       FontSize="24"
+                       FontWeight="Bold"/>
 
-            <TextBlock Grid.Column="5"
-                       Text="Type name"
-                       HorizontalAlignment="Left"
+            <TextBlock Grid.Column="4"
+                       Grid.Row="1"
+                       x:Name="tblTypeName"
+                       HorizontalAlignment="Center"
                        VerticalAlignment="Center"
-                       FontSize="22"
-                       FontWeight="Bold"
-                       Margin="645,0,0,0"/>
-
-            <TextBlock Grid.Column="1" Grid.Row="1"
-                     Name="tblLineId"  
-                     Text=""
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                     FontSize="24"
-                     FontWeight="Bold"
-                     Margin="60,-20,0,0"/>
-
-            <TextBlock Grid.Column="2" Grid.Row="1"
-                     Name="tblBikeAccessible"    
-                     Text=""
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                     FontSize="24"
-                     FontWeight="Bold"
-                     Margin="180,-20,0,0"/>
-
-            <TextBlock Grid.Column="3" Grid.Row="1"
-                     Name="tblDist"
-                     Text=""
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                     FontSize="24"
-                     FontWeight="Bold"
-                     Margin="395,-20,0,0"/>
-
-            <TextBlock Grid.Column="4" Grid.Row="1"
-                     Name="tblTravelTime"
-                     Text=""
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                     FontSize="22"
-                     FontWeight="Bold"
-                     Margin="490,-20,0,0"/>
-
-            <TextBlock Grid.Column="5" Grid.Row="1"
-                     Name="tblTypeName"
-                     Text=""
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                     FontSize="22"
-                     FontWeight="Bold"
-                     Margin="645,-20,0,0"/>
+                       FontSize="24"/>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -110,54 +115,66 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <Grid Background="#ff3f34">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <TextBlock Grid.Column="0"
-                       Text="Total Tickets Sold:"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       FontSize="24"
-                       FontWeight="Bold"
-                       Margin="55,100,0,0"/>
+                <TextBlock Text="Total Tickets Sold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"/>
 
-            <TextBlock Grid.Column="0" Grid.Row="0"
-                     Name="tblTotal_Tickets_Sold"
-                       Text=""
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       FontSize="24"
-                       FontWeight="Bold"
-                       Margin="300,100,0,0"/>
+                <Grid Grid.Row="1"
+                      Background="#ff5e57">
+                    <TextBlock x:Name="tblTotalTicketsSold"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="100"/>
+                </Grid>
+            </Grid>
 
-            <ComboBox Grid.Column="1" Grid.Row="0" Height="35" Width="200"
-                     Name="cmbxDates"
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                     FontSize="16"
-                     FontWeight="Bold"
-                     Margin="100,0,0,0"/>
+            <Grid Grid.Column="1"
+                  Background="#4a69bd">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <TextBlock Grid.Column="1" Grid.Row="1"
-                     Text="Tickets_Sold:"
-                     HorizontalAlignment="Left"
+                <ComboBox x:Name="cmbxDates"
+                          Width="200"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          FontSize="18"
+                          SelectedIndex="0"
+                          FontWeight="Bold"
+                          SelectionChanged="cmbxDates_SelectionChanged"/>
+
+                <Grid Grid.Row="1"
+                      Background="#6a89cc">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.15*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                     Text="Tickets Sold"
+                     HorizontalAlignment="Center"
                      VerticalAlignment="Center"
                      FontSize="24"
-                     FontWeight="Bold"
-                     Margin="50,0,0,0"/>
+                     FontWeight="Bold"/>
 
-            <TextBlock Grid.Column="1" Grid.Row="1"
-                     Name="tblTickets_Sold"
-                     Text=""
-                     HorizontalAlignment="Left"
-                     VerticalAlignment="Center"
-                     FontSize="24"
-                     FontWeight="Bold"
-                     Margin="220,0,0,0"/>
-
+                    <TextBlock Grid.Row="1"
+                               x:Name="tblTicketsSold"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="100"/>
+                </Grid>
+            </Grid>
         </Grid>
-
     </Grid>
 </Window>

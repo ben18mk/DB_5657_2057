@@ -28,7 +28,7 @@ namespace DB_5657_2057
             Start = info[1].ToString();
             End = info[2].ToString();
             Distance = $"{info[3]} km";
-            TravelTime = $"{info[4].ToString().Split(':')[0]} h {info[4].ToString().Split(':')[1]} m";
+            TravelTime = $"{info[4].ToString().Split(':')[0]}h {info[4].ToString().Split(':')[1]}m";
             Income = $"₪ {info[5]}";
         }
     }

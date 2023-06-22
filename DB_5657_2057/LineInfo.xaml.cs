@@ -20,9 +20,12 @@ namespace DB_5657_2057
     /// </summary>
     public partial class LineInfo : Window
     {
-        public LineInfo(int LineId)
+        private int lineId;
+        public LineInfo(int lineId)
         {
             #region Pre-Load
+            this.lineId = lineId;
+
             List<object> result = SQL.Procedure("GetLineInfo",
               new List<List<object>>()
               {
@@ -30,7 +33,7 @@ namespace DB_5657_2057
                   {
                       "line_id",
                       MySqlDbType.Int32,
-                      LineId
+                      lineId
                   }
               },
               new List<List<object>>()
@@ -59,25 +62,33 @@ namespace DB_5657_2057
 
             List<object[]> counts = (from countInformation in SQL.Query(SQL.LoadQuery("../../Queries/CountTicketsPerLineTotal.sql"))
                                      let casted = (object[])countInformation
-                                     where (int)casted[0] == LineId
+                                     where (int)casted[0] == lineId
                                      select casted).ToList();
 
-            List<string> dates = (from date in SQL.Query(SQL.LoadQuery("../../Queries/GetOrderedDays.sql", LineId))
+            List<string> dates = (from date in SQL.Query(SQL.LoadQuery("../../Queries/GetOrderedDays.sql", lineId))
                                   let casted = (object[])date
-                                  select casted[0].ToString()).ToList();
+                                  let dayDate = casted[0].ToString().Split(' ')[0].Split('/')
+                                  select $"{dayDate[1]}.{dayDate[0]}.{dayDate[2]}").ToList();
             #endregion
 
             InitializeComponent();
-            tblLineId.Text = LineId.ToString();
-            if ((int)result[0] == 0)
-                tblBikeAccessible.Text = "Yes";
-            else
-                tblBikeAccessible.Text = "No";
-            tblDist.Text = result[1].ToString();
-            tblTravelTime.Text = result[2].ToString();
+            tblLineId.Text = lineId.ToString();
+            tblBikeAccessible.Text = (int)result[0] == 0 ? "Yes" : "No";
+            tblDist.Text = $"{result[1]} km";
+            tblTravelTime.Text = $"{result[2].ToString().Split(':')[0]}h {result[2].ToString().Split(':')[1]}m";
             tblTypeName.Text = result[3].ToString();
-            tblTotal_Tickets_Sold.Text = counts[0][1].ToString();
+            tblTotalTicketsSold.Text = counts[0][1].ToString();
             cmbxDates.ItemsSource = dates;
+        }
+
+        private void cmbxDates_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string[] splittedDate = cmbxDates.SelectedItem.ToString().Split('.');
+            tblTicketsSold.Text = (from item in SQL.Query(SQL.LoadQuery("../../Queries/CountTicketsPerLineDay.sql",
+                                                                        $"'{splittedDate[2]}-{splittedDate[1]}-{splittedDate[0]}'"))
+                                   let casted = (object[])item
+                                   where (int)casted[0] == lineId
+                                   select Convert.ToInt32(casted[1])).First().ToString();
         }
     }
 }
