@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DB_5657_2057
 {
     /// <summary>
-    /// Class to represent line information
+    /// Class to represent passenger information
     /// </summary>
     public class PassengerRepresentation
     {
@@ -18,7 +18,7 @@ namespace DB_5657_2057
         public string Address { get; }
 
         /// <summary>
-        /// Constructor to initialize RouteRepresentation object
+        /// Constructor to initialize PassengerRepresentation object
         /// </summary>
         /// <param name="info">info object retrieved from the database</param>
         public PassengerRepresentation(object[] info)
