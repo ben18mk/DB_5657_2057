@@ -62,7 +62,7 @@ namespace DB_5657_2057
                                      where (int)casted[0] == LineId
                                      select casted).ToList();
 
-            List<string> dates = (from date in SQL.Query(SQL.LoadQuery("../../Queries/GetOrderedDays.sql",LineId))
+            List<string> dates = (from date in SQL.Query(SQL.LoadQuery("../../Queries/GetOrderedDays.sql", LineId))
                                   let casted = (object[])date
                                   select casted[0].ToString()).ToList();
             #endregion

@@ -55,12 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-	  <Compile Include="LineInfo.xaml.cs">
-		  <DependentUpon>LineInfo.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Include="AdminPanel.xaml.cs">
-		  <DependentUpon>AdminPanel.xaml</DependentUpon>
-	  </Compile>
     <Compile Include="Lines.xaml.cs">
       <DependentUpon>Lines.xaml</DependentUpon>
     </Compile>
