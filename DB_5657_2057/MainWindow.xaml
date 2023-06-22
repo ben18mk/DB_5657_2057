@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DB_5657_2057"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
@@ -16,9 +17,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
+            <!--IMPLEMENT-->
             <Button x:Name="btnBuy"
                     Margin="10"
                     Content="Buy Ticket"
@@ -29,6 +32,13 @@
                     Margin="10"
                     Content="Routes"
                     Click="btnGetRoutes_Click"
+                    FontSize="18"/>
+
+            <Button x:Name="btnAdmin"
+                    Grid.Column="2"
+                    Margin="10"
+                    Content="Admin"
+                    Click="btnAdmin_Click"
                     FontSize="18"/>
         </Grid>
 

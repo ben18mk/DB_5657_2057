@@ -21,7 +21,7 @@ namespace DB_5657_2057
         /// <summary>
         /// Constructor to initialize RouteRepresentation object
         /// </summary>
-        /// <param name="info"></param>
+        /// <param name="info">info object retrieved from the database</param>
         public RouteRepresentation(object[] info)
         {
             RouteID = info[0].ToString();

@@ -1,0 +1,158 @@
+﻿<Window x:Class="DB_5657_2057.Passengers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DB_5657_2057"
+        mc:Ignorable="d"
+        Title="Passengers" Height="450" Width="1300"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="tbxIdFilter"
+                         Margin="10"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"
+                         FontSize="24"
+                         MaxLength="9"
+                         KeyDown="tbxIdFilter_KeyDown"/>
+                
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="ID Filter"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24"/>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="btnIdFilterS"
+                        Grid.Column="0"
+                        Margin="15, 2"
+                        Content="Starts"
+                        FontSize="20" Click="btnIdFilterS_Click"/>
+                        
+                        <Button x:Name="btnIdFilterC"
+                        Grid.Column="1"
+                        Margin="15, 2"
+                        Content="Contains"
+                        FontSize="20" Click="btnIdFilterC_Click"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="tbxNameFilter"
+                         Margin="10"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"
+                         FontSize="14"
+                         KeyDown="tbxNameFilter_KeyDown"/>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Name Filter"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24"/>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="btnNameFilterS"
+                        Grid.Column="0"
+                        Margin="15, 2"
+                        Content="Starts"
+                        FontSize="20" Click="btnNameFilterS_Click"/>
+
+                        <Button x:Name="btnNameFilterC"
+                        Grid.Column="1"
+                        Margin="15, 2"
+                        Content="Contains"
+                        FontSize="20" Click="btnNameFilterC_Click"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <ListBox x:Name="lbPassengers"
+                 Grid.Row="1"
+                 Margin="20"
+                 HorizontalContentAlignment="Center"
+                 MouseDoubleClick="lbPassengers_MouseDoubleClick">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="400"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding ID}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding Name}"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding Email}"
+                                   Grid.Column="2"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding Phone}"
+                                   Grid.Column="3"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Text="{Binding Address}"
+                                   Grid.Column="4"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

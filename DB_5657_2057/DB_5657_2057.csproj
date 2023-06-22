@@ -55,8 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminPanel.xaml.cs">
+      <DependentUpon>AdminPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lines.xaml.cs">
       <DependentUpon>Lines.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PassengerRepresentation.cs" />
+    <Compile Include="Passengers.xaml.cs">
+      <DependentUpon>Passengers.xaml</DependentUpon>
     </Compile>
     <Compile Include="RouteRepresentation.cs" />
     <Compile Include="SQL.cs" />
@@ -67,6 +74,10 @@
     <Compile Include="Routes.xaml.cs">
       <DependentUpon>Routes.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Lines.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +94,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Passengers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StationInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +142,7 @@
     <Content Include="Queries\CountTicketsPerLineDay.sql" />
     <Content Include="Queries\CountTicketsPerLineTotal.sql" />
     <Content Include="Queries\GetOrderedDays.sql" />
+    <Content Include="Queries\GetPassengers.sql" />
     <Content Include="Queries\GetRouteLines.sql" />
     <Content Include="Queries\PassengerRideHistory.sql" />
     <Content Include="Queries\RouteInformation.sql" />

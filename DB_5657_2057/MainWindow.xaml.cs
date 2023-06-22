@@ -49,5 +49,10 @@ namespace DB_5657_2057
         {
             new Routes().ShowDialog();
         }
+
+        private void btnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            new AdminPanel().ShowDialog();
+        }
     }
 }
