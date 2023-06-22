@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LineInfo.xaml.cs">
+      <DependentUpon>LineInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lines.xaml.cs">
       <DependentUpon>Lines.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,10 @@
     <Compile Include="Routes.xaml.cs">
       <DependentUpon>Routes.xaml</DependentUpon>
     </Compile>
+    <Page Include="LineInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Lines.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
