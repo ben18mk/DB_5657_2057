@@ -66,6 +66,14 @@ namespace DB_5657_2057
 
         private void btnGetLineOpTime_Click(object sender, RoutedEventArgs e)
         {
+            tbxLineId.Text = tbxLineId.Text.Replace(" ", "");
+
+            if (tbxLineId.Text == "")
+            {
+                MessageBox.Show("Line ID not specified", "Oops", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }    
+
             List<object> result = SQL.Procedure("GetLineOpTimeAtStation",
                           new List<List<object>>()
                           {
