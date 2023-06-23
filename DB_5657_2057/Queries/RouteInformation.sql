@@ -16,3 +16,4 @@ NATURAL JOIN (SELECT route_id, SUM(price) AS income
       NATURAL JOIN tlines
       NATURAL JOIN tickets
       GROUP BY route_id) AS incomeperroute
+ORDER BY route_id

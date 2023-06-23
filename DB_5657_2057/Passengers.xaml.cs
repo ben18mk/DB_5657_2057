@@ -51,6 +51,9 @@ namespace DB_5657_2057
 
         private void lbPassengers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            if (lbPassengers.SelectedItem == null)
+                return;
+
             new PassengerInfo((PassengerRepresentation)lbPassengers.SelectedItem).ShowDialog();
         }
 

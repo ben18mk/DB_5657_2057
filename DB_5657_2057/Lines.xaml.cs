@@ -37,6 +37,9 @@ namespace DB_5657_2057
 
         private void lbLine_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            if (lbLines.SelectedItem == null)
+                return;
+
             string selectedLine = lbLines.SelectedItem.ToString();
             new LineInfo(int.Parse(selectedLine)).ShowDialog();
         }

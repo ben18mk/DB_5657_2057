@@ -25,7 +25,7 @@
             <Button x:Name="btnBuy"
                     Margin="10"
                     Content="Buy Ticket"
-                    FontSize="18"/>
+                    FontSize="18" Click="btnBuy_Click"/>
 
             <Button x:Name="btnRoutes"
                     Grid.Column="1"

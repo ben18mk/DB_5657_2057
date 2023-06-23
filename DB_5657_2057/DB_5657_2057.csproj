@@ -71,11 +71,17 @@
     <Compile Include="Passengers.xaml.cs">
       <DependentUpon>Passengers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RegistedPassenger.xaml.cs">
+      <DependentUpon>RegistedPassenger.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RideHistoryRepresentation.cs" />
     <Compile Include="RouteRepresentation.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="StationInfo.xaml.cs">
       <DependentUpon>StationInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TicketOrder.xaml.cs">
+      <DependentUpon>TicketOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpcommingTrain.cs" />
     <Compile Include="Routes.xaml.cs">
@@ -113,11 +119,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RegistedPassenger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StationInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Routes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TicketOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,7 +173,11 @@
     <Content Include="Queries\GetOrderedDays.sql" />
     <Content Include="Queries\GetPassengers.sql" />
     <Content Include="Queries\GetRouteLines.sql" />
+    <Content Include="Queries\PassengerExists.sql" />
     <Content Include="Queries\PassengerRideHistory.sql" />
+    <Content Include="Queries\RegisterPassenger.sql">
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
     <Content Include="Queries\RouteInformation.sql" />
     <Content Include="Queries\StationRoutes.sql" />
     <Content Include="Queries\StationUpcommingTrains.sql" />

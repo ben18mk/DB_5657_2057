@@ -37,6 +37,9 @@ namespace DB_5657_2057
 
         private void lbStations_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            if (lbStations.SelectedItem == null)
+                return;
+
             string selectedStationName = lbStations.SelectedItem.ToString();
             object[] station = (from s in stations
                                where s[1].ToString() == selectedStationName
@@ -53,6 +56,11 @@ namespace DB_5657_2057
         private void btnAdmin_Click(object sender, RoutedEventArgs e)
         {
             new AdminPanel().ShowDialog();
+        }
+
+        private void btnBuy_Click(object sender, RoutedEventArgs e)
+        {
+            new TicketOrder().ShowDialog();
         }
     }
 }

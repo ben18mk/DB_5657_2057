@@ -35,6 +35,9 @@ namespace DB_5657_2057
 
         private void lbRoutes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            if (lbRoutes.SelectedItem == null)
+                return;
+
             new Lines((RouteRepresentation)lbRoutes.SelectedItem).ShowDialog();
         }
 
