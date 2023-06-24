@@ -1,0 +1,271 @@
+/*-------------- 502 ----------------*/
+INSERT INTO stops
+VALUES (502, 17074, 1, '05:48');
+
+INSERT INTO stops
+VALUES (502, 17060, 2, '06:08');
+
+INSERT INTO stops
+VALUES (502, 17058, 3, '06:13');
+
+INSERT INTO stops
+VALUES (502, 17056, 4, '06:21');
+
+INSERT INTO stops
+VALUES (502, 17104, 5, '06:30');
+
+INSERT INTO stops
+VALUES (502, 17046, 6, '06:35');
+
+INSERT INTO stops
+VALUES (502, 17038, 7, '06:39');
+
+INSERT INTO stops
+VALUES (502, 17036, 8, '06:44');
+
+INSERT INTO stops
+VALUES (502, 17034, 9, '06:52');
+
+INSERT INTO stops
+VALUES (502, 17032, 10, '07:02');
+
+INSERT INTO stops
+VALUES (502, 17030, 11, '07:09');
+
+/*-------------- 504 ----------------*/
+INSERT INTO stops
+VALUES (504, 17074, 1, '06:48');
+
+INSERT INTO stops
+VALUES (504, 17060, 2, '07:08');
+
+INSERT INTO stops
+VALUES (504, 17058, 3, '07:13');
+
+INSERT INTO stops
+VALUES (504, 17056, 4, '07:21');
+
+INSERT INTO stops
+VALUES (504, 17104, 5, '07:30');
+
+INSERT INTO stops
+VALUES (504, 17046, 6, '07:35');
+
+INSERT INTO stops
+VALUES (504, 17038, 7, '07:39');
+
+INSERT INTO stops
+VALUES (504, 17036, 8, '07:44');
+
+INSERT INTO stops
+VALUES (504, 17034, 9, '07:52');
+
+INSERT INTO stops
+VALUES (504, 17032, 10, '08:02');
+
+INSERT INTO stops
+VALUES (504, 17030, 11, '08:09');
+
+/*-------------- 506 ----------------*/
+INSERT INTO stops
+VALUES (506, 17074, 1, '07:48');
+
+INSERT INTO stops
+VALUES (506, 17060, 2, '08:08');
+
+INSERT INTO stops
+VALUES (506, 17058, 3, '08:13');
+
+INSERT INTO stops
+VALUES (506, 17056, 4, '08:21');
+
+INSERT INTO stops
+VALUES (506, 17104, 5, '08:30');
+
+INSERT INTO stops
+VALUES (506, 17046, 6, '08:35');
+
+INSERT INTO stops
+VALUES (506, 17038, 7, '08:39');
+
+INSERT INTO stops
+VALUES (506, 17036, 8, '08:44');
+
+INSERT INTO stops
+VALUES (506, 17034, 9, '08:52');
+
+INSERT INTO stops
+VALUES (506, 17032, 10, '09:02');
+
+INSERT INTO stops
+VALUES (506, 17030, 11, '09:09');
+
+/*-------------- 518 ----------------*/
+INSERT INTO stops
+VALUES (518, 17074, 1, '13:48');
+
+INSERT INTO stops
+VALUES (518, 17060, 2, '14:08');
+
+INSERT INTO stops
+VALUES (518, 17058, 3, '14:13');
+
+INSERT INTO stops
+VALUES (518, 17056, 4, '14:21');
+
+INSERT INTO stops
+VALUES (518, 17104, 5, '14:30');
+
+INSERT INTO stops
+VALUES (518, 17046, 6, '14:35');
+
+INSERT INTO stops
+VALUES (518, 17038, 7, '14:39');
+
+INSERT INTO stops
+VALUES (518, 17036, 8, '14:44');
+
+INSERT INTO stops
+VALUES (518, 17034, 9, '14:52');
+
+INSERT INTO stops
+VALUES (518, 17032, 10, '15:02');
+
+INSERT INTO stops
+VALUES (518, 17030, 11, '15:09');
+
+/*-------------- 520 ----------------*/
+INSERT INTO stops
+VALUES (520, 17074, 1, '14:48');
+
+INSERT INTO stops
+VALUES (520, 17060, 2, '15:08');
+
+INSERT INTO stops
+VALUES (520, 17058, 3, '15:13');
+
+INSERT INTO stops
+VALUES (520, 17056, 4, '15:21');
+
+INSERT INTO stops
+VALUES (520, 17104, 5, '15:30');
+
+INSERT INTO stops
+VALUES (520, 17046, 6, '15:35');
+
+INSERT INTO stops
+VALUES (520, 17038, 7, '15:39');
+
+INSERT INTO stops
+VALUES (520, 17036, 8, '15:44');
+
+INSERT INTO stops
+VALUES (520, 17034, 9, '15:52');
+
+INSERT INTO stops
+VALUES (520, 17032, 10, '16:02');
+
+INSERT INTO stops
+VALUES (520, 17030, 11, '16:09');
+
+/*-------------- 522 ----------------*/
+INSERT INTO stops
+VALUES (522, 17074, 1, '15:48');
+
+INSERT INTO stops
+VALUES (522, 17060, 2, '16:08');
+
+INSERT INTO stops
+VALUES (522, 17058, 3, '16:13');
+
+INSERT INTO stops
+VALUES (522, 17056, 4, '16:21');
+
+INSERT INTO stops
+VALUES (522, 17104, 5, '16:30');
+
+INSERT INTO stops
+VALUES (522, 17046, 6, '16:35');
+
+INSERT INTO stops
+VALUES (522, 17038, 7, '16:39');
+
+INSERT INTO stops
+VALUES (522, 17036, 8, '16:44');
+
+INSERT INTO stops
+VALUES (522, 17034, 9, '16:52');
+
+INSERT INTO stops
+VALUES (522, 17032, 10, '17:02');
+
+INSERT INTO stops
+VALUES (522, 17030, 11, '17:09');
+
+/*-------------- 524 ----------------*/
+INSERT INTO stops
+VALUES (524, 17074, 1, '16:48');
+
+INSERT INTO stops
+VALUES (524, 17060, 2, '17:08');
+
+INSERT INTO stops
+VALUES (524, 17058, 3, '17:13');
+
+INSERT INTO stops
+VALUES (524, 17056, 4, '17:21');
+
+INSERT INTO stops
+VALUES (524, 17104, 5, '17:30');
+
+INSERT INTO stops
+VALUES (524, 17046, 6, '17:35');
+
+INSERT INTO stops
+VALUES (524, 17038, 7, '17:39');
+
+INSERT INTO stops
+VALUES (524, 17036, 8, '17:44');
+
+INSERT INTO stops
+VALUES (524, 17034, 9, '17:52');
+
+INSERT INTO stops
+VALUES (524, 17032, 10, '18:02');
+
+INSERT INTO stops
+VALUES (524, 17030, 11, '18:09');
+
+/*-------------- 526 ----------------*/
+INSERT INTO stops
+VALUES (526, 17074, 1, '17:48');
+
+INSERT INTO stops
+VALUES (526, 17060, 2, '18:08');
+
+INSERT INTO stops
+VALUES (526, 17058, 3, '18:13');
+
+INSERT INTO stops
+VALUES (526, 17056, 4, '18:21');
+
+INSERT INTO stops
+VALUES (526, 17104, 5, '18:30');
+
+INSERT INTO stops
+VALUES (526, 17046, 6, '18:35');
+
+INSERT INTO stops
+VALUES (526, 17038, 7, '18:39');
+
+INSERT INTO stops
+VALUES (526, 17036, 8, '18:44');
+
+INSERT INTO stops
+VALUES (526, 17034, 9, '18:52');
+
+INSERT INTO stops
+VALUES (526, 17032, 10, '19:02');
+
+INSERT INTO stops
+VALUES (526, 17030, 11, '19:09');
