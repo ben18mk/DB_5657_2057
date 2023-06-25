@@ -105,7 +105,7 @@ Each record has 5 fields.
 || Phone | INT | The passenger phone number
 || Address | VARCHAR | The passenger home address
 
-### Tables (tables)
+### Tickets (tickets)
 This table represents the information about the tickets booked by passengers.</br>
 Each record has 3 fields.
 
@@ -125,3 +125,90 @@ Each record has 4 fields.
 :key: | Ticket ID | INT | The ticket ID
 || Date | DATE | The Payment date
 || Method | VARCHAR | The payment method - Cash or Card
+
+## Procedures
+### Get info on a certain line (GetLineInfo)
+This procedure consolidates technical information on a certain line from several tables.
+
+**Example:**
+For line number 738 (Jerusalem -> Herzliya).
+```
+CALL GetLineInfo(738, @ba, @d, @tt, @tn);
+
+SELECT
+  @ba AS bike_accessibility,
+  @d AS distance,
+  @tt AS travel_time,
+  @tn AS train_type
+```
+
+bike_accessibility | distance | travel_time | train_type
+|---|---|---|---
+1 | 55.2 | 00:54:00 | Siemens
+
+### Get the operation time of a certain line at a certain station (GetLineOpTimeAtStation)
+This procedure gets the operation time of a certain line at a certain station.
+
+**Example:**
+For line number 738 (Jerusalem -> Herzliya) at station 17038 (Tel Aviv - Center).
+```
+CALL GetLineOpTimeAtStation(738, 17038, @op_time);
+
+SELECT @op_time AS operation_time
+```
+
+operation_time |
+--- |
+12:50:00
+
+### Get payment statistics of a certain passenger (CountPassengerPaymentMethod)
+This procedure counts how many times a certain passenger purchased tickets by cash and how many times by card.</br>
+In addition, the procedure summarizes between the results for receiving the total amount of ticket purchases of the aforementioned passenger.
+
+**Example:**
+For the passenger whose ID number is 18.
+```
+CALL CountPassengerPaymentMethod(18, @cash, @card, @total);
+
+SELECT
+  @cash AS cash,
+  @card AS card,
+  @total AS total
+```
+
+cash | card | total |
+|---|---|---
+2 | 3 | 5
+
+### Get the ticket price of a certain route (GetRoutePrice)
+This procedure gets the price (in Shekels) for a ticket of a certain route.
+
+**Example:**
+For route number 8 (Haifa - Hof HaCarmel -> Carmiel).
+```
+CALL GetRoutePrice(8, @p);
+
+SELECT @p AS price
+```
+
+price |
+---|
+25
+
+### Ordering a ticket (OrderTicket)
+This procedure creates new records in the tickets table and the payments table.</br>
+Finally, it returns the new ticket ID and the new payment ID.
+
+**Example:**
+For the passenger whose ID number is 8 for line number 729 (Herzliya -> Jerusalem).
+```
+CALL OrderTicket(8, 729, 'card', '2023-06-23', @tid, @pid);
+
+SELECT
+  @tid AS ticket_id,
+  @pid AS payment_id
+```
+
+ticket_id | payment_id |
+|---|---
+4000 | 4000
