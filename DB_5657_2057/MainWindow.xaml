@@ -21,7 +21,6 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <!--IMPLEMENT-->
             <Button x:Name="btnBuy"
                     Margin="10"
                     Content="Buy Ticket"
